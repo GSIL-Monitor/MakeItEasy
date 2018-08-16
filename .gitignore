@@ -1,0 +1,9 @@
+.idea/
+__pycache__/
+staticfiles/
+
+debug.log
+
+db.sqlite3
+
+temp/

@@ -1,0 +1,41 @@
+Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\PycharmProject\MakeItEasy\MIEenv\lib\site-packages\django\urls\base.py", line 77, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProject\MakeItEasy\MIEenv\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\PycharmProject\MakeItEasy\MIEenv\lib\site-packages\django\utils\deprecation.py", line 142, in __call__
+    response = self.process_response(request, response)
+  File "D:\PycharmProject\MakeItEasy\MIEenv\lib\site-packages\debug_toolbar\middleware.py", line 134, in process_response
+    bits[-2] += toolbar.render_toolbar()
+  File "D:\PycharmProject\MakeItEasy\MIEenv\lib\site-packages\debug_toolbar\toolbar.py", line 64, in render_toolbar
+    return render_to_string('debug_toolbar/base.html', context)
+  File "D:\PycharmProject\MakeItEasy\MIEenv\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "D:\PycharmProject\MakeItEasy\MIEenv\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "D:\PycharmProject\MakeItEasy\MIEenv\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "D:\PycharmProject\MakeItEasy\MIEenv\lib\site-packages\django\test\utils.py", line 107, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "D:\PycharmProject\MakeItEasy\MIEenv\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\PycharmProject\MakeItEasy\MIEenv\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\PycharmProject\MakeItEasy\MIEenv\lib\site-packages\django\template\defaulttags.py", line 322, in render
+    return nodelist.render(context)
+  File "D:\PycharmProject\MakeItEasy\MIEenv\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\PycharmProject\MakeItEasy\MIEenv\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\PycharmProject\MakeItEasy\MIEenv\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\PycharmProject\MakeItEasy\MIEenv\lib\site-packages\django\urls\base.py", line 87, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+"GET / HTTP/1.1" 500 132536
