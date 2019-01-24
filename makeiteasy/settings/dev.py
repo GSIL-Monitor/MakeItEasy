@@ -49,3 +49,48 @@ DEBUG_TOOLBAR_PANELS = [
 DEBUG_TOOLBAR_CONFIG ={
     "JQUERY_URL":"https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js",
 }
+
+# log
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'errorfile': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(os.path.dirname(BASE_DIR), 'logs/error.log'),
+        },
+        'infofile': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(os.path.dirname(BASE_DIR), 'logs/info.log'),
+        },
+        'console': {
+                    'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+        },
+    },
+}
+
+
+EMAIL_USE_SSL = True
+EMAIL_HOST = 'smtp.qiye.163.com'  # 如果是 163 改成 smtp.163.com
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'niuxingjie@chinahrt.com' # 帐号
+EMAIL_HOST_PASSWORD = '3C94uZS26fk64at4'  # 密码
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+
+DEFAULT_FROM_EMAIL = 'niuxingjie@chinahrt.com'
+
+'''
+from django.core.mail import send_mail
+send_mail('subject here','here is message','niuxingjie@chinahrt.com',['996067941@qq.com'],fail_silently=False)
+
+
+'''

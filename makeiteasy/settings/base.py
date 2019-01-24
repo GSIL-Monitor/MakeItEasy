@@ -25,7 +25,7 @@ SECRET_KEY = 'qh@a)b#3k3((vpv85)s6-b3*c#lon)@sz1r-dv*p%wl=5tne6w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'makeiteasy.apps.blog'
 ]
 
 MIDDLEWARE = [
@@ -119,32 +120,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'errorfile': {
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': os.path.join(os.path.dirname(BASE_DIR), 'logs/error.log'),
-        },
-        'infofile': {
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': os.path.join(os.path.dirname(BASE_DIR), 'logs/info.log'),
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['errorfile'],
-            'level': 'ERROR',
-            'propagate': True,
-        },
-        'okr': {
-            'handlers': ['infofile'],
-            'level': 'INFO',
-            'propagate': True,
-        },
-    },
-}

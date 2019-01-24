@@ -7,3 +7,5 @@ debug.log
 db.sqlite3
 
 temp/
+alipay_sanbox_private_2048.txt
+alipay_sanbox_public_2048.txt
